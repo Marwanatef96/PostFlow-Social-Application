@@ -9,7 +9,7 @@ export async function GET(request) {
         const page = searchParams.get("page") || "1";
         const limit = searchParams.get("limit") || "10";
 
-        const apiUrl = `${process.env.API_URL}/posts?page=${page}&limit=${limit}`;
+        const apiUrl = `https://tarmeezacademy.com/api/v1/posts?page=${page}&limit=${limit}`;
         console.log("Fetching posts:", apiUrl);
 
         const res = await fetch(apiUrl, {
@@ -39,7 +39,7 @@ export async function POST(req) {
         const formData = await req.formData();
         console.log("Creating post...");
 
-        const res = await fetch(`${process.env.API_URL}/posts`, {
+        const res = await fetch(`https://tarmeezacademy.com/api/v1/posts`, {
             method: "POST",
             body: formData,
             headers: {

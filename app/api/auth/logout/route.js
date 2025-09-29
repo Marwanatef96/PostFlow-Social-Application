@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(req) {
     try {
-        const res = await fetch(`${process.env.API_URL}/logout`, {
+        const res = await fetch(`https://tarmeezacademy.com/api/v1/logout`, {
             method: "POST",
             headers: {
                 Accept: "application/json",

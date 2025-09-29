@@ -19,14 +19,17 @@ export async function POST(req, { params }) {
         };
 
         // 4. Make the request to the actual Tarmeez API
-        const res = await fetch(`${process.env.API_URL}/posts/${id}/comments`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${body.token}`, // Use the token from the request body
-            },
-            body: JSON.stringify(externalApiBody),
-        });
+        const res = await fetch(
+            `https://tarmeezacademy.com/api/v1/posts/${id}/comments`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${body.token}`, // Use the token from the request body
+                },
+                body: JSON.stringify(externalApiBody),
+            }
+        );
 
         // 5. Forward the response from the Tarmeez API back to our frontend
         const data = await res.json();

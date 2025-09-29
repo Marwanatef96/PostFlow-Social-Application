@@ -15,7 +15,7 @@ export async function POST(req) {
         const body = await req.json();
         console.log("Attempting login with:", { username: body.username });
 
-        const res = await fetch(`${process.env.API_URL}/login`, {
+        const res = await fetch(`https://tarmeezacademy.com/api/v1/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

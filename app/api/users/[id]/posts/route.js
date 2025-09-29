@@ -5,7 +5,9 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
     try {
         const { id } = await params;
-        const res = await fetch(`${process.env.API_URL}/users/${id}/posts`);
+        const res = await fetch(
+            `https://tarmeezacademy.com/api/v1/users/${id}/posts`
+        );
         const data = await res.json();
         return NextResponse.json(data, { status: res.status });
     } catch (error) {

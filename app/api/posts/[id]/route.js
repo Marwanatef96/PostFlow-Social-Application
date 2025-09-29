@@ -5,7 +5,9 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
     try {
         const { id } = params;
-        const res = await fetch(`${process.env.API_URL}/posts/${id}`);
+        const res = await fetch(
+            `https://tarmeezacademy.com/api/v1/posts/${id}`
+        );
         const data = await res.json();
         return NextResponse.json(data, { status: res.status });
     } catch (error) {
@@ -23,16 +25,19 @@ export async function PUT(req, { params }) {
         // Add _method=PUT for backend compatibility
         formData.append("_method", "PUT");
         // Proxy as POST with _method=PUT
-        const res = await fetch(`${process.env.API_URL}/posts/${id}`, {
-            method: "POST",
-            body: formData,
-            headers: {
-                Accept: "application/json",
-                Authorization: formData.get("token")
-                    ? `Bearer ${formData.get("token")}`
-                    : undefined,
-            },
-        });
+        const res = await fetch(
+            `https://tarmeezacademy.com/api/v1/posts/${id}`,
+            {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json",
+                    Authorization: formData.get("token")
+                        ? `Bearer ${formData.get("token")}`
+                        : undefined,
+                },
+            }
+        );
         const data = await res.json();
         return NextResponse.json(data, { status: res.status });
     } catch (error) {
@@ -51,10 +56,13 @@ export async function DELETE(req, { params }) {
             req.headers.get("Authorization");
         const headers = { Accept: "application/json" };
         if (token) headers["Authorization"] = token;
-        const res = await fetch(`${process.env.API_URL}/posts/${id}`, {
-            method: "DELETE",
-            headers,
-        });
+        const res = await fetch(
+            `https://tarmeezacademy.com/api/v1/posts/${id}`,
+            {
+                method: "DELETE",
+                headers,
+            }
+        );
         let data = null;
         const text = await res.text();
         try {
