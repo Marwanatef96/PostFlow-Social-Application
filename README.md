@@ -8,11 +8,9 @@ PostFlow is a full-stack social feed application built with Next.js and Material
 
 ---
 
-**Live Demo:** (Live Link)[https://post-flow-social-application-4yjcjc9vx.vercel.app/]
-
-**Repository:** (App Repo)[https://github.com/Marwanatef96/PostFlow-Social-Application/]
-
-**Repository:** (Api Documentation)[https://documenter.getpostman.com/view/4696539/2s83zjqN3F]
+🌐 **Live Demo:** [PostFlow on Vercel](https://post-flow-social-application-4yjcjc9vx.vercel.app/)  
+📂 **Repository:** [GitHub Repo](https://github.com/Marwanatef96/PostFlow-Social-Application)  
+📑 **API Documentation:** [Postman Docs](https://documenter.getpostman.com/view/4696539/2s83zjqN3F)
 
 ---
 
