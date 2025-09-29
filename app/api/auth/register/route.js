@@ -3,7 +3,7 @@
 import { NextResponse } from "next/server";
 
 // Best practice: Define constants for external URLs
-const EXTERNAL_API_URL = `https://tarmeezacademy.com/api/v1/register`;
+const EXTERNAL_API_URL = `${process.env.API_URL}/register`;
 
 export const config = {
     api: { bodyParser: false },
